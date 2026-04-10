@@ -2,8 +2,9 @@ void main() {
   //arreglos
   List<String> nombres = ['Ana', 'Luis', 'María', 'Carlos'];
   List<int> notas = [9, 5, 7, 3];
- 
-  print('Calificaciones');
+  
+  //ciclo for y
+  print('=== Calificaciones ===');
   for (int i = 0; i < nombres.length; i++) {
     String estado;
  
@@ -23,8 +24,8 @@ void main() {
  
     print('${nombres[i]}: ${notas[i]} -> $estado');
   }
- 
-  print('\n Suma de notas (while)');
+   //while y do-while
+  print('\n=== Suma de notas (while) ===');
   int suma = 0;
   int i = 0;
   while (i < notas.length) {
@@ -34,7 +35,7 @@ void main() {
   print('Suma total: $suma');
   print('Promedio: ${suma ~/ notas.length}');
  
-  print('\n Conteo regresivo (do-while)');
+  print('\n=== Conteo regresivo (do-while) ===');
   int contador = notas.length;
   do {
     print('Alumno #$contador: ${nombres[contador - 1]}');
@@ -42,7 +43,7 @@ void main() {
   } while (contador > 0);
  
   //switch case
-  print('\n Nivel por nota (switch)');
+  print('\n=== Nivel por nota (switch) ===');
   for (int nota in notas) {
     String nivel;
     switch (nota) {
@@ -62,5 +63,16 @@ void main() {
     }
     print('Nota $nota -> Nivel $nivel');
   }
-
+   //try catch
+  print('\n Manejo de errores (try-catch)');
+  try {
+    List<int> vacia = [];
+    print(vacia[0]);
+  } catch (e) {
+    print('Error capturado: $e');
+  } finally {
+    print('Bloque finally siempre se ejecuta');
+  }
+ 
+  print('\nPrograma finalizado.');
 }
