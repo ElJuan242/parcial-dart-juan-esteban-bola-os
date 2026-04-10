@@ -1,5 +1,5 @@
 void main() {
-  // arreglos
+  //arreglos
   List<String> nombres = ['Ana', 'Luis', 'María', 'Carlos'];
   List<int> notas = [9, 5, 7, 3];
  
@@ -23,7 +23,7 @@ void main() {
  
     print('${nombres[i]}: ${notas[i]} -> $estado');
   }
-  
+ 
   print('\n Suma de notas (while)');
   int suma = 0;
   int i = 0;
@@ -33,4 +33,34 @@ void main() {
   }
   print('Suma total: $suma');
   print('Promedio: ${suma ~/ notas.length}');
+ 
+  print('\n Conteo regresivo (do-while)');
+  int contador = notas.length;
+  do {
+    print('Alumno #$contador: ${nombres[contador - 1]}');
+    contador--;
+  } while (contador > 0);
+ 
+  //switch case
+  print('\n Nivel por nota (switch)');
+  for (int nota in notas) {
+    String nivel;
+    switch (nota) {
+      case 10:
+      case 9:
+        nivel = 'A';
+        break;
+      case 8:
+      case 7:
+        nivel = 'B';
+        break;
+      case 6:
+        nivel = 'C';
+        break;
+      default:
+        nivel = 'F';
+    }
+    print('Nota $nota -> Nivel $nivel');
+  }
+
 }
